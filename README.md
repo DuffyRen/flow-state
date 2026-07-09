@@ -11,7 +11,8 @@
 
 <p align="center">
   <strong>macOS 13+ · Apple Silicon (arm64)</strong><br>
-  <a href="README.en.md">English README</a>
+  <a href="README.en.md">English README</a> ·
+  <a href="VIBECODING.md">Vibecoding 实践指南</a>
 </p>
 
 ---

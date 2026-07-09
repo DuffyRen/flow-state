@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="README.md">中文文档</a> ·
+  <a href="VIBECODING.md">Vibecoding Guide</a> ·
   <strong>macOS 13+ · Apple Silicon (arm64)</strong>
 </p>
 

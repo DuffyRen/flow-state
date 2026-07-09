@@ -1,0 +1,39 @@
+---
+description: Flow State 项目 vibecoding 约定与避坑指南
+alwaysApply: true
+---
+
+# Flow State Vibecoding 规则
+
+## 架构边界
+
+- 业务 UI 在 `code_artifact.html`；可测纯逻辑放 `lib/`（IIFE，Node 可 require）
+- 窗口/小组件/系统同步在 `native/main.swift`；不改无关原生代码
+- 构建输出默认 `dist/Flow State.app`，支持 `FLOW_STATE_APP_PATH` 覆盖
+
+## 修改后必做
+
+- 改逻辑：补或跑 `tests/unit/` 用例
+- 改 HTML/桥接：跑 `./test.sh` 或至少 `npm run test:unit` + 静态检查
+- 改完提示用户：`./build.sh` 后真机验证
+
+## WKWebView 避坑
+
+- 可点击区域：`-webkit-app-region: no-drag`；任务列表用事件委托，避免内联 onclick 失效
+- `window.xxx` 桥接函数与内部实现**不同名**（例：`tickTimerFromWallClock` vs `window.syncTimerFromClock`）
+
+## 计时器
+
+- 用墙钟：`createTimerEndAt` + `calcTimeLeftFromEnd`，禁止仅靠 `setInterval(() => timeLeft--)`
+- 小组件模式依赖原生定时调用 `syncTimerFromClock`
+
+## 代码风格
+
+- 最小 diff；不扩范围重构
+- 匹配现有命名与 IIFE 模式
+- 注释只写非显而易见的业务/平台细节
+
+## 参考
+
+- 流程与 checklist：`VIBECODING.md`
+- 架构：`docs/Flow State 技术架构.md`
