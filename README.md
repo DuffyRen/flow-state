@@ -186,6 +186,26 @@ npm run test:e2e      # 仅 E2E
 
 欢迎 Issue 与 Pull Request。提交前请运行 `./test.sh` 确保通过。
 
+GitHub Actions 会在 `main` 分支推送与 PR 时自动运行测试（`.github/workflows/test.yml`）。
+
+## 发布到 GitHub
+
+仓库已包含一键发布脚本（需先安装并登录 [GitHub CLI](https://cli.github.com/)）：
+
+```bash
+brew install gh
+gh auth login
+
+# 创建公开仓库并推送（默认仓库名 flow-state）
+./scripts/publish-to-github.sh
+```
+
+自定义仓库名或可见性：
+
+```bash
+GITHUB_REPO_NAME=my-flow-state GITHUB_REPO_VISIBILITY=private ./scripts/publish-to-github.sh
+```
+
 ## 许可证
 
 [MIT License](LICENSE)

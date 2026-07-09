@@ -13,11 +13,12 @@ ICNS_DST="$APP_PATH/Contents/Resources/AppIcon.icns"
 INFO_SRC="$PROJECT_DIR/native/Info.plist"
 INFO_DST="$APP_PATH/Contents/Info.plist"
 
+mkdir -p "$(dirname "$APP_PATH")" "$APP_PATH/Contents/MacOS" "$APP_PATH/Contents/Resources" "$APP_PATH/Contents/Resources/lib"
+
 echo "→ 同步 Info.plist"
 cp "$INFO_SRC" "$INFO_DST"
 
 echo "→ 同步页面到 App 资源目录"
-mkdir -p "$(dirname "$APP_PATH")" "$APP_PATH/Contents/MacOS" "$APP_PATH/Contents/Resources" "$APP_PATH/Contents/Resources/lib"
 cp "$HTML_SRC" "$HTML_DST"
 cp -R "$PROJECT_DIR/lib/." "$APP_PATH/Contents/Resources/lib/"
 
@@ -49,4 +50,4 @@ chmod +x "$NATIVE_BIN"
 touch "$APP_PATH"
 
 echo "✓ 构建完成：$APP_PATH"
-echo "  双击桌面 Flow State.app 即可运行"
+echo "  运行：open \"$APP_PATH\""
