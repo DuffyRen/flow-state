@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+test-results/
+playwright-report/
+playwright/.cache/
+dist/
+assets/AppIcon.iconset/
+*.app
