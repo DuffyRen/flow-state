@@ -9,3 +9,4 @@ playwright/.cache/
 dist/
 assets/AppIcon.iconset/
 *.app
+Flow-State-*.zip

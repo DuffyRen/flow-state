@@ -10,7 +10,8 @@
 </p>
 
 <p align="center">
-  <strong>macOS 13+ · Apple Silicon (arm64)</strong>
+  <strong>macOS 13+ · Apple Silicon (arm64)</strong><br>
+  <a href="README.en.md">English README</a>
 </p>
 
 ---
@@ -28,13 +29,21 @@
 
 ## 截图
 
-| 展开模式 | 桌面小组件 |
-|---------|-----------|
-| 左侧番茄钟 + 右侧待办 | 倒计时圆环 + 待办进度 |
+| 展开模式 | 待办与计时中 |
+|---------|-------------|
+| ![展开模式](docs/screenshots/main-expanded.png) | ![待办模式](docs/screenshots/main-with-tasks.png) |
 
-> 构建并运行 `./build.sh` 后即可在 `dist/Flow State.app` 中体验完整界面。
+| 深色模式 | 桌面小组件 |
+|---------|-----------|
+| ![深色模式](docs/screenshots/main-dark.png) | ![小组件](docs/screenshots/widget-collapsed.png) |
+
+也可在 [Releases](https://github.com/DuffyRen/flow-state/releases) 下载预构建的 `.app` 包。
 
 ## 快速开始
+
+### 下载发布版
+
+从 [Releases](https://github.com/DuffyRen/flow-state/releases) 下载最新的 **`Flow-State-*-macos-arm64.zip`**，解压后将 **Flow State.app** 拖入「应用程序」文件夹。
 
 ### 环境要求
 
@@ -43,7 +52,7 @@
 - [Xcode Command Line Tools](https://developer.apple.com/xcode/resources/)（提供 `swiftc`、`sips`、`iconutil`）
 - Node.js 18+（仅开发 / 测试时需要）
 
-### 构建并运行
+### 从源码构建
 
 ```bash
 git clone https://github.com/DuffyRen/flow-state.git
