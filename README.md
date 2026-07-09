@@ -46,7 +46,7 @@
 ### 构建并运行
 
 ```bash
-git clone https://github.com/renguangjian/flow-state.git
+git clone https://github.com/DuffyRen/flow-state.git
 cd flow-state
 
 # 构建桌面 App（默认输出到 dist/Flow State.app）
